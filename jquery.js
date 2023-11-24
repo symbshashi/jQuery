@@ -6,7 +6,9 @@
     // $('h1').click();
     $('h1').click(function () {
         console.log("you clicked me", this);
-        $('#first').hide();
+    });
+    $('h1').dblclick(function () {
+        console.log("you  double clicked me", this);
     })
 
 
@@ -22,8 +24,10 @@
 
 
 
-
-
+//we use event on the button of toggle predefined function
+$('#but').click(function(){
+    $('#wiki').toggle()
+})
 });
 
 
