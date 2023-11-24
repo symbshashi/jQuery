@@ -14,7 +14,8 @@
 
 
 
-
+//To fetch api we have to use
+//$.get("Api link")
 
 
 // Mouse Events = click, dbclick, mouseselector, mouseleave
@@ -28,6 +29,7 @@
 $('#but').click(function(){
     $('#wiki').toggle()
 })
+$('#wiki').css('background-color', 'red')
 });
 
 
