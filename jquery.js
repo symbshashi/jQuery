@@ -1,3 +1,5 @@
+ 
+ 
  //Examples of element selector
  $(document).ready(function () {
     console.log("i am in a new file now")
@@ -18,10 +20,10 @@
 //$.get("Api link")
 
 
-// Mouse Events = click, dbclick, mouseselector, mouseleave
-// KeyboardEvent = keypress , keydown , MediaKeyStatusMap
-// form events = submit , change, focus, blur
-// document/window events = load, resize, scrool, unload
+// Mouse Events = click, dbclick, mouseselector, mouseleave .
+// KeyboardEvent = keypress , keydown , MediaKeyStatusMap .
+// form events = submit , change, focus, blur .
+// document/window events = load, resize, scrool, unload .
 
 
 
