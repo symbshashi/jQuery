@@ -12,6 +12,23 @@
     $('h1').dblclick(function () {
         console.log("you  double clicked me", this);
     })
+    $('#click').click(function(){
+        $.ajax({
+            url:'https://jsonplaceholder.typicode.com/todos/1',
+            type:'GET',
+            dataType: 'json',
+            timeout:2500,
+            sucess:function(result){
+                console.log('complete with success with data', result);
+            },
+            error:function(result){
+                console.log('complete with error');
+            },
+            complete:function(){
+                console.log('complete')
+            },
+        });
+    })
 
 
 

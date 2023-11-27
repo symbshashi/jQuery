@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="message"></div>
+    <button id="submit">submit</button>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#submit').click(function(){
+                var url ="https://jsonplaceholder.typicode.com/todos";
+                $.ajax({
+                    url: url,
+                    dataType: 'json',
+                    type: 'get',
+                    success: function(result){
+                        var table = $('<table>').append("<tr><td>user id</td><td>ID</td><td>Title</td><td>Completed</td></tr>");
+                        for (i=0; i<result.length; i++){
+                            table.append("<tr><td>"+result[i]["userId"]+"</td><td>"+result[i]["id"]+"</td><td>"+result[i]["title"]+"</td><td>"+result[i]["completed"]+"</td></tr>");
+                        } 
+                        $('#message').html(table);
+                    },
+                    error: function(error){
+                        alert(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
