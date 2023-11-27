@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="message"></div>
-    <button id="submit">Click Here to get api data</button>
+    <button id="submit">Click Here to get API data</button>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -19,9 +19,10 @@
                     dataType: 'json',
                     type: 'get',
                     success: function(result){
-                        var table = $('<table>').append("<tr><td>user id</td><td>ID</td><td>Title</td><td>Completed</td></tr>");
+                        var table = $('<table>').append("<tr><td>UserID</td><td>ID</td><td>Title</td><td>Completed</td></tr>");
                         for (i=0; i<result.length; i++){
-                            table.append("<tr><td>"+result[i]["userId"]+"</td><td>"+result[i]["id"]+"</td><td>"+result[i]["title"]+"</td><td>"+result[i]["completed"]+"</td></tr>");
+                            var textColor = result[i]["completed"] ? "green" : "red";
+                            table.append("<tr><td>"+result[i]["userId"]+"</td><td>"+result[i]["id"]+"</td><td>"+result[i]["title"]+"</td><td style='background-color: " + textColor + "'>"+result[i]["completed"]+"</td></tr>");
                         } 
                         $('#message').html(table);
                     },
